@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Prediction System Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <a class="back-link" href="../../projects/placement-predictor.html">Back to Case Study</a>
+      <p class="eyebrow">Demo 02</p>
+      <h1>Placement Prediction System</h1>
+      <p class="lead">
+        Adjust academic and skill inputs to simulate a placement-readiness score. This MVP demonstrates a front-end prototype for a predictive placement tool.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <div class="panel form-panel">
+        <h2>Candidate Profile</h2>
+        <div class="field-grid">
+          <label>CGPA
+            <input id="cgpa" type="range" min="5" max="10" step="0.1" value="8.2">
+            <span id="cgpa-value">8.2</span>
+          </label>
+          <label>DSA Score
+            <input id="dsa" type="range" min="0" max="100" step="1" value="78">
+            <span id="dsa-value">78</span>
+          </label>
+          <label>Communication
+            <input id="communication" type="range" min="0" max="100" step="1" value="72">
+            <span id="communication-value">72</span>
+          </label>
+          <label>Projects Built
+            <input id="projects" type="range" min="0" max="8" step="1" value="4">
+            <span id="projects-value">4</span>
+          </label>
+          <label>Internships
+            <select id="internships">
+              <option value="0">None</option>
+              <option value="8">One internship</option>
+              <option value="15">Two or more</option>
+            </select>
+          </label>
+          <label>SQL/DB Knowledge
+            <select id="sql">
+              <option value="4">Basic</option>
+              <option value="8" selected>Intermediate</option>
+              <option value="12">Advanced</option>
+            </select>
+          </label>
+        </div>
+        <button id="predict-btn" type="button">Predict Placement Chance</button>
+      </div>
+
+      <div class="panel result-panel">
+        <h2>Prediction Result</h2>
+        <div class="score-ring">
+          <div class="score-ring-inner">
+            <strong id="score-label">0%</strong>
+            <span>Readiness</span>
+          </div>
+        </div>
+        <h3 id="result-title">Waiting for analysis</h3>
+        <p id="result-copy">Update the profile values and run the prediction to see the result.</p>
+        <ul id="recommendations" class="recommendations"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Companion Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <a class="back-link" href="../../projects/ai-study-companion.html">Back to Case Study</a>
+      <p class="eyebrow">Demo 01</p>
+      <h1>AI Study Companion</h1>
+      <p class="lead">
+        Paste class notes or study material, then generate a simplified summary, revision flashcards, quiz questions, or concept guidance.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <div class="panel input-panel">
+        <h2>Study Input</h2>
+        <label for="study-input">Notes or topic content</label>
+        <textarea id="study-input">Machine learning is a branch of artificial intelligence that enables systems to learn patterns from data. Supervised learning uses labeled datasets to train models for prediction, while unsupervised learning finds hidden structure in unlabeled data. Evaluation metrics such as accuracy, precision, recall, and F1-score are used to assess model performance.</textarea>
+
+        <div class="controls">
+          <label for="study-mode">Output Mode</label>
+          <select id="study-mode">
+            <option value="summary">Smart Summary</option>
+            <option value="flashcards">Flashcards</option>
+            <option value="quiz">Quiz Generator</option>
+            <option value="explain">Concept Explainer</option>
+          </select>
+        </div>
+
+        <div class="action-row">
+          <button id="generate-btn" type="button">Generate</button>
+          <button id="sample-btn" type="button" class="secondary-btn">Load Another Topic</button>
+        </div>
+      </div>
+
+      <div class="panel output-panel">
+        <h2>Generated Output</h2>
+        <div id="output" class="output-content"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
