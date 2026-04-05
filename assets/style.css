@@ -628,6 +628,10 @@ h3 {
   pointer-events: none;
 }
 
+.project-card:not(.project-featured) .project-content {
+  padding-top: 52px;
+}
+
 .project-card .card-kicker,
 .project-card h3,
 .project-card p,
@@ -649,18 +653,25 @@ h3 {
   color: rgba(241, 246, 255, 0.94);
 }
 
-.project-link {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.clickable-card {
+  cursor: pointer;
 }
 
 .project-card h3,
 .info-card h3,
 .skill-panel h3 {
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.12;
   margin-bottom: 12px;
+}
+
+.project-card:not(.project-featured) .card-kicker {
+  margin-bottom: 10px;
+}
+
+.project-card:not(.project-featured) p {
+  font-size: 17px;
+  line-height: 1.55;
 }
 
 .tags,

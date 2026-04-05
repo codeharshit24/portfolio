@@ -4,6 +4,7 @@ const year = document.querySelector("#year");
 const brandButton = document.querySelector(".brand");
 const popup = document.querySelector("#welcome-popup");
 const popupClose = document.querySelector(".popup-close");
+const clickableCards = document.querySelectorAll(".clickable-card");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -42,5 +43,24 @@ if (brandButton && popup && popupClose) {
     if (event.key === "Escape") {
       popup.hidden = true;
     }
+  });
+}
+
+if (clickableCards.length) {
+  clickableCards.forEach((card) => {
+    const openCard = () => {
+      const href = card.dataset.href;
+      if (href) {
+        window.location.href = href;
+      }
+    };
+
+    card.addEventListener("click", openCard);
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openCard();
+      }
+    });
   });
 }
