@@ -413,8 +413,8 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(2, 6, 14, 0.08), rgba(2, 6, 14, 0.74)),
-    radial-gradient(circle at 15% 15%, rgba(104, 225, 253, 0.18), transparent 24%);
+    linear-gradient(180deg, rgba(3, 7, 14, 0.18), rgba(3, 7, 14, 0.9)),
+    radial-gradient(circle at 15% 15%, rgba(104, 225, 253, 0.12), transparent 24%);
   transition: opacity var(--transition);
 }
 
@@ -622,6 +622,28 @@ h3 {
 .project-content {
   bottom: 0;
   padding: 28px;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(4, 8, 16, 0.06), rgba(4, 8, 16, 0.78));
+}
+
+.project-card .card-kicker,
+.project-card h3,
+.project-card p,
+.project-card .tags {
+  position: relative;
+  z-index: 4;
+}
+
+.project-card .card-kicker {
+  color: #b8eefe;
+}
+
+.project-card h3 {
+  color: #ffffff;
+}
+
+.project-card p {
+  color: rgba(241, 246, 255, 0.94);
 }
 
 .project-link {
@@ -712,6 +734,28 @@ h3 {
 .focus-card:focus-within .focus-card-back {
   opacity: 1;
   transform: translateY(0);
+}
+
+.github-cta-wrap {
+  margin-top: 26px;
+}
+
+.github-cta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 26px 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.github-cta-card h3 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
 }
 
 .skills-layout,
@@ -866,6 +910,11 @@ h3 {
   .hero h1,
   .cta-card h2 {
     max-width: none;
+  }
+
+  .github-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .quick-link {
