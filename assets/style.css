@@ -624,6 +624,7 @@ h3 {
   padding: 28px;
   z-index: 3;
   background: linear-gradient(180deg, rgba(4, 8, 16, 0.06), rgba(4, 8, 16, 0.78));
+  pointer-events: none;
 }
 
 .project-card .card-kicker,
@@ -632,6 +633,7 @@ h3 {
 .project-card .tags {
   position: relative;
   z-index: 4;
+  pointer-events: none;
 }
 
 .project-card .card-kicker {

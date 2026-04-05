@@ -21,6 +21,8 @@ const aov = document.querySelector("#aov");
 const bestRegion = document.querySelector("#best-region");
 const bars = document.querySelector("#bars");
 const products = document.querySelector("#products");
+const insightCopy = document.querySelector("#insight-copy");
+const bestMonth = document.querySelector("#best-month");
 
 function filterData() {
   return dataset.filter((item) => {
@@ -48,6 +50,8 @@ function render() {
   bestRegion.textContent = best ? best[0][0].toUpperCase() + best[0].slice(1) : "-";
 
   const maxRevenue = Math.max(...filtered.map((item) => item.revenue), 1);
+  const topMonth = [...filtered].sort((a, b) => b.revenue - a.revenue)[0];
+
   bars.innerHTML = filtered.map((item) => `
     <div class="bar-row">
       <span>${item.month}</span>
@@ -70,6 +74,14 @@ function render() {
       </div>
     `)
     .join("");
+
+  bestMonth.textContent = topMonth ? `${topMonth.month} (${topMonth.region})` : "-";
+
+  if (topMonth) {
+    insightCopy.textContent = `${topMonth.month} delivered the strongest performance in the selected view with revenue of $${topMonth.revenue.toLocaleString()}, making it the key month to study for sales drivers and demand patterns.`;
+  } else {
+    insightCopy.textContent = "No matching data is available for the selected filters.";
+  }
 }
 
 regionSelect.addEventListener("change", render);

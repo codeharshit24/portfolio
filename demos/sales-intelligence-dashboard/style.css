@@ -52,7 +52,8 @@ h1 {
 }
 .toolbar,
 .metrics,
-.dashboard-grid {
+.dashboard-grid,
+.insights-grid {
   display: grid;
   gap: 20px;
   margin-top: 28px;
@@ -65,6 +66,9 @@ h1 {
 }
 .dashboard-grid {
   grid-template-columns: 1.1fr 0.9fr;
+}
+.insights-grid {
+  grid-template-columns: 1.2fr 0.8fr;
 }
 label {
   display: block;
@@ -130,10 +134,17 @@ select {
   margin-top: 8px;
   color: #9fb0d4;
 }
+.insight-card p {
+  margin: 0;
+  color: #c7d8f6;
+  font-size: 20px;
+  line-height: 1.7;
+}
 @media (max-width: 900px) {
   .toolbar,
   .metrics,
-  .dashboard-grid {
+  .dashboard-grid,
+  .insights-grid {
     grid-template-columns: 1fr;
   }
 }
